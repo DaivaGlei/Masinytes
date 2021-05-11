@@ -51,29 +51,118 @@ package masinytes;
 
 
 public class Masina {
-    
+   
+
     private String pavadinimas;
     private int maxGreitis;
-    
-    public Masina(String masinosPavadinimas, String marke) {
-        this.pavadinimas = masinosPavadinimas;
+    private int greitis;
+    private int kelias;
+
+    public Masina(String pavadinimas, int maxGreitis) {
+        this.pavadinimas = pavadinimas;
         this.maxGreitis = maxGreitis;
+        this.greitis = 0;
+        this.kelias = 0;
+    }
+
+    Masina(String fordas, int i, int i0, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getPavadinimas() {
         return pavadinimas;
     }
 
-    public int getmaxGreitis() {
+    public int getMaxGreitis() {
         return maxGreitis;
     }
 
-    public void setPavadinimas(String pavadinimas) {
-        this.pavadinimas = pavadinimas;
+    public int getGreitis() {
+        return greitis;
     }
 
-    public void setMarke(int maxGreitis) {
-        this.maxGreitis = maxGreitis;
+    public int getKelias() {
+        return kelias;
     }
-   
+
+    public void gazuok(int kiek) {
+        if (kiek < 0) {
+            return;
+        }
+        this.greitis += kiek;
+        if (this.greitis > this.maxGreitis) {
+            this.greitis = this.maxGreitis;
+        }
+    }
+
+    public void stabyk(int kiek) {
+        if (kiek < 0) {
+            return;
+        }
+        this.greitis -= kiek;
+        if (this.greitis < 0) {
+            this.greitis = 0;
+        }
+    }
+    
+    public void vaziuok() {
+        this.kelias += this.greitis;
+    }
+
+    @Override
+    public String toString() {
+        return "Masina{" + "pavadinimas=" + pavadinimas + ", maxGreitis=" + maxGreitis + ", greitis=" + greitis + ", kelias=" + kelias + '}';
+    }
+    
 }
+
+
+//    
+//    private String pavadinimas;
+//    private int maxGreitis;
+//    private int kelias;
+//    private int greitis;
+//    
+//     public Masina(String pavadinimas, int maxGreitis, int kelias, int greitis) {
+//        this.pavadinimas = pavadinimas;
+//        this.maxGreitis = maxGreitis;
+//        this.kelias = kelias;
+//        this.greitis = greitis;
+//    }
+//
+//    public String getPavadinimas() {
+//        return pavadinimas;
+//    }
+//
+//    public int getmaxGreitis() {
+//        return maxGreitis;
+//    }
+//
+//    public void setPavadinimas(String pavadinimas) {
+//        this.pavadinimas = pavadinimas;
+//    }
+//
+//    public void setMaxGreitis(int maxGreitis) {
+//        this.maxGreitis = maxGreitis;
+//    }
+//
+//    public int getKelias() {
+//        return kelias;
+//    }
+//
+//    public int getGreitis() {
+//        return greitis;
+//    }
+//
+//    public void setKelias(int kelias) {
+//        this.kelias = kelias;
+//    }
+//
+//    public void setGreitis(int greitis) {
+//        this.greitis = greitis;
+//    }
+//
+//   
+//    }
+//   
+
